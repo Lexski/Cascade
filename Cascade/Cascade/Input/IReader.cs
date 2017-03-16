@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cascade.Input
 {
-    // Represents an object that provides input to the program.
+    // Represents an object that retrieves text input for the program.
     interface IReader
     {
         bool Read(out string input);
