@@ -12,7 +12,8 @@ namespace Cascade
     {
         public void Run(IReader reader)
         {
-            
+            // Get text from the reader.
+            // Parse the text and perform actions using a listener.
         }
     }
 }
