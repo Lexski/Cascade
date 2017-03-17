@@ -16,10 +16,10 @@ namespace Cascade.Input
             _prompt = ">> ";
         }
 
-        public bool Read(out string input)
+        public bool ReadInto(out string text)
         {
             Console.Write(_prompt);
-            input = Console.ReadLine();
+            text = Console.ReadLine();
             return true;
         }
     }

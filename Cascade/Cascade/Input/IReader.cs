@@ -10,6 +10,6 @@ namespace Cascade.Input
     interface IReader
     {
         // Returns false when there is nothing left to read.
-        bool Read(out string input);
+        bool ReadInto(out string text);
     }
 }
