@@ -9,6 +9,7 @@ namespace Cascade.Input
     // Represents an object that retrieves text input for the program.
     interface IReader
     {
+        // Returns false when there is nothing left to read.
         bool Read(out string input);
     }
 }
