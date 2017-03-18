@@ -69,6 +69,8 @@
       <DependentUpon>Logic.g4</DependentUpon>
     </Compile>
     <Compile Include="Logic\Controller.cs" />
+    <Compile Include="Logic\Expression.cs" />
+    <Compile Include="Logic\Formula.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
