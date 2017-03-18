@@ -15,19 +15,26 @@ namespace Cascade.Antlr
         public void Run(IReader reader)
         {
             string cascadeInput;
-            while (reader.ReadInto(out cascadeInput))
+            try
             {
-                // Parse the text.
-                AntlrInputStream stream = new AntlrInputStream(cascadeInput);
-                CascadeLexer lexer = new CascadeLexer(stream);
-                CommonTokenStream tokens = new CommonTokenStream(lexer);
-                CascadeParser parser = new CascadeParser(tokens);
-                IParseTree tree = parser.command();
+                while (reader.ReadInto(out cascadeInput))
+                {
+                    // Parse the text.
+                    AntlrInputStream stream = new AntlrInputStream(cascadeInput);
+                    CascadeLexer lexer = new CascadeLexer(stream);
+                    CommonTokenStream tokens = new CommonTokenStream(lexer);
+                    CascadeParser parser = new CascadeParser(tokens);
+                    IParseTree tree = parser.command();
 
-                // Perform actions using a listener.
-                ParseTreeWalker walker = new ParseTreeWalker();
-                CascadeListener listener = new CascadeListener();
-                walker.Walk(listener, tree);
+                    // Perform actions using a listener.
+                    ParseTreeWalker walker = new ParseTreeWalker();
+                    CascadeListener listener = new CascadeListener();
+                    walker.Walk(listener, tree);
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.Error.WriteLine(exception.Message);
             }
         }
     }

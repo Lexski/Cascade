@@ -67,6 +67,7 @@
     <Compile Include="Antlr\Grammars\Logic.g4.parser.cs">
       <DependentUpon>Logic.g4</DependentUpon>
     </Compile>
+    <Compile Include="Logic\Controller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -82,6 +83,7 @@
     </Antlr4>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
