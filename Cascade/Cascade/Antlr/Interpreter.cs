@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cascade
+namespace Cascade.Antlr
 {
     // An object that is given text (Cascade code) and issues commands based on it.
     class Interpreter

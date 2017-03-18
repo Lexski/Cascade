@@ -1,4 +1,4 @@
-﻿namespace Cascade.Grammars
+﻿namespace Cascade.Antlr.Grammars
 {
     partial class CascadeParser
     {
