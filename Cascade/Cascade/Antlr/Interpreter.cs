@@ -15,9 +15,9 @@ namespace Cascade.Antlr
         public void Run(IReader reader, IController controller)
         {
             string cascadeInput;
-            try
+            while (reader.ReadInto(out cascadeInput))
             {
-                while (reader.ReadInto(out cascadeInput))
+                try
                 {
                     // Parse the text.
                     AntlrInputStream stream = new AntlrInputStream(cascadeInput);
@@ -31,11 +31,12 @@ namespace Cascade.Antlr
                     CascadeListener listener = new CascadeListener(controller);
                     walker.Walk(listener, tree);
                 }
+                catch (Exception exception)
+                {
+                    Console.Error.WriteLine(exception.Message);
+                }
             }
-            catch (Exception exception)
-            {
-                Console.Error.WriteLine(exception.Message);
-            }
+            
         }
     }
 }
