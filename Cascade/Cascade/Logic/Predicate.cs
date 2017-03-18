@@ -9,31 +9,93 @@ namespace Cascade.Logic
 {
     abstract class Predicate : INamed
     {
-        public static Predicate CreateAndRegister(string name, IRegistry registry)
+        public Predicate(string name)
+        {
+            Name = name;
+        }
+
+        public static void CreateAndRegister(string name, IRegistry registry)
         {
             if (name == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("name");
+            }
+            else if (registry == null)
+            {
+                throw new ArgumentNullException("registry");
             }
             else
             {
-                throw new NotImplementedException();
+                ElementaryPredicate elementaryPredicate = new ElementaryPredicate(name);
+                registry.Register(elementaryPredicate);
             }
         }
 
-        public static Predicate CreateAndRegister(string name, string alias, IRegistry registry)
+        public static void CreateAndRegister(string name, string alias, IRegistry registry)
         {
-            throw new NotImplementedException();
+            if (name == null)
+            {
+                throw new ArgumentNullException("name");
+            }
+            else if (alias == null)
+            {
+                throw new ArgumentNullException("alias");
+            }
+            else if (registry == null)
+            {
+                throw new ArgumentNullException("registry");
+            }
+            else
+            {
+                ElementaryPredicate elementaryPredicate = new ElementaryPredicate(name);
+                registry.Register(elementaryPredicate, alias);
+            }
         }
 
-        public static Predicate CreateAndRegister(string name, Expression expression, IRegistry registry)
+        public static void CreateAndRegister(string name, Expression expression, IRegistry registry)
         {
-            throw new NotImplementedException();
+            if (name == null)
+            {
+                throw new ArgumentNullException("name");
+            }
+            else if (expression == null)
+            {
+                throw new ArgumentNullException("expression");
+            }
+            else if (registry == null)
+            {
+                throw new ArgumentNullException("registry");
+            }
+            else
+            {
+                DerivedPredicate derivedPredicate = new DerivedPredicate(name, expression);
+                registry.Register(derivedPredicate);
+            }
         }
 
-        public static Predicate CreateAndRegister(string name, string alias, Expression expression, IRegistry registry)
+        public static void CreateAndRegister(string name, string alias, Expression expression, IRegistry registry)
         {
-            throw new NotImplementedException();
+            if (name == null)
+            {
+                throw new ArgumentNullException("name");
+            }
+            else if (alias == null)
+            {
+                throw new ArgumentNullException("alias");
+            }
+            else if (expression == null)
+            {
+                throw new ArgumentNullException("expression");
+            }
+            else if (registry == null)
+            {
+                throw new ArgumentNullException("registry");
+            }
+            else
+            {
+                DerivedPredicate derivedPredicate = new DerivedPredicate(name, expression);
+                registry.Register(derivedPredicate, alias);
+            }
         }
 
         public string Name { get; }
