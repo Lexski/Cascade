@@ -18,32 +18,32 @@ namespace Cascade.Logic
 
         public void DeclarePredicate(string name)
         {
-            Predicate.CreateAndRegister(name);
+            Predicate.CreateAndRegister(name, _registry);
         }
 
         public void DeclarePredicate(string name, string alias)
         {
-            Predicate.CreateAndRegister(name, alias);
+            Predicate.CreateAndRegister(name, alias, _registry);
         }
 
         public void DeclarePredicate(string name, Expression expression)
         {
-            Predicate.CreateAndRegister(name, expression);
+            Predicate.CreateAndRegister(name, expression, _registry);
         }
 
         public void DeclarePredicate(string name, string alias, Expression expression)
         {
-            Predicate.CreateAndRegister(name, alias, expression);
+            Predicate.CreateAndRegister(name, alias, expression, _registry);
         }
 
         public void DeclareTest(string name, Expression expression)
         {
-            Test.CreateAndRegister(name, expression);
+            Test.CreateAndRegister(name, expression, _registry);
         }
 
         public void DeclareTest(string name, string alias, Expression expression)
         {
-            Test.CreateAndRegister(name, alias, expression);
+            Test.CreateAndRegister(name, alias, expression, _registry);
         }
 
         public void Assert(Rule rule)
