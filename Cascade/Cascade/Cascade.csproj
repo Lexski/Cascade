@@ -72,6 +72,7 @@
     <Compile Include="Logic\Expression.cs" />
     <Compile Include="Logic\Predicate.cs" />
     <Compile Include="Logic\Rule.cs" />
+    <Compile Include="Logic\Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

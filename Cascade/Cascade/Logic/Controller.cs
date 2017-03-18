@@ -8,11 +8,6 @@ namespace Cascade.Logic
 {
     class Controller : IController
     {
-        public void Assert(Rule formula)
-        {
-            throw new NotImplementedException();
-        }
-
         public void DeclarePredicate(string name)
         {
             Predicate.CreateAndRegister(name);
@@ -35,10 +30,15 @@ namespace Cascade.Logic
 
         public void DeclareTest(string name, Expression expression)
         {
-            throw new NotImplementedException();
+            Test.CreateAndRegister(name, expression);
         }
 
         public void DeclareTest(string name, string alias, Expression expression)
+        {
+            Test.CreateAndRegister(name, alias, expression);
+        }
+
+        public void Assert(Rule formula)
         {
             throw new NotImplementedException();
         }
