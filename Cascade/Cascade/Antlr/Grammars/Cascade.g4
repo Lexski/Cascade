@@ -16,7 +16,7 @@ declare: KW_Declare predicateName=Identifier aliasClause? KW_As? TP_Predicate			
 | KW_Declare testName=Identifier aliasClause? KW_As? TP_Test expressionClause				#DeclareTest
 ;
 
-assert: KW_Assert formula;
+assert: KW_Assert rule;
 
 generate: KW_Generate;
 

@@ -22,7 +22,7 @@ namespace Cascade
 
         void DeclareTest(string name, string alias, Expression expression);
 
-        void Assert(Formula formula);
+        void Assert(Rule formula);
 
         void Generate();
 

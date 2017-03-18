@@ -4,7 +4,7 @@ grammar Logic;
  * Parser Rules
  */
 
-formula: unaryComparator expression
+rule: unaryComparator expression
 | expression binaryComparator expression
 ;
 

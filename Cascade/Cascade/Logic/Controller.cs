@@ -8,7 +8,7 @@ namespace Cascade.Logic
 {
     class Controller : IController
     {
-        public void Assert(Formula formula)
+        public void Assert(Rule formula)
         {
             throw new NotImplementedException();
         }

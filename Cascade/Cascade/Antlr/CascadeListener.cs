@@ -53,7 +53,7 @@ namespace Cascade.Antlr
 
         public override void ExitAssert([NotNull] CascadeParser.AssertContext context)
         {
-            _controller.Assert(Formula.Parse(context.formula().GetText()));
+            _controller.Assert(Rule.Parse(context.rule().GetText()));
         }
 
         public override void ExitGenerate([NotNull] CascadeParser.GenerateContext context)
@@ -72,5 +72,3 @@ namespace Cascade.Antlr
         }
     }
 }
-
-// ToDo: Standardise usage of formula/expression/rule

@@ -70,7 +70,7 @@
     </Compile>
     <Compile Include="Logic\Controller.cs" />
     <Compile Include="Logic\Expression.cs" />
-    <Compile Include="Logic\Formula.cs" />
+    <Compile Include="Logic\Rule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
