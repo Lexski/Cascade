@@ -43,19 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cascade.g4.lexer.cs">
+    <Compile Include="Grammars\Cascade.g4.lexer.cs">
       <DependentUpon>Cascade.g4</DependentUpon>
     </Compile>
-    <Compile Include="Cascade.g4.parser.cs">
+    <Compile Include="Grammars\Cascade.g4.parser.cs">
       <DependentUpon>Cascade.g4</DependentUpon>
     </Compile>
     <Compile Include="Input\ConsoleReader.cs" />
     <Compile Include="Input\IReader.cs" />
     <Compile Include="Interpreter.cs" />
-    <Compile Include="Logic.g4.lexer.cs">
+    <Compile Include="Grammars\Logic.g4.lexer.cs">
       <DependentUpon>Logic.g4</DependentUpon>
     </Compile>
-    <Compile Include="Logic.g4.parser.cs">
+    <Compile Include="Grammars\Logic.g4.parser.cs">
       <DependentUpon>Logic.g4</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -63,11 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Antlr4 Include="Cascade.g4">
+    <Antlr4 Include="Grammars\Cascade.g4">
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>Cascade</CustomToolNamespace>
     </Antlr4>
-    <Antlr4 Include="Logic.g4">
+    <Antlr4 Include="Grammars\Logic.g4">
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>Cascade</CustomToolNamespace>
     </Antlr4>
