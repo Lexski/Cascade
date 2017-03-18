@@ -11,9 +11,9 @@ command: declare | assert | generate | save;
 
 
 // Commands
-declare: KW_Declare Identifier alias? KW_As? TP_Predicate	#DeclarePredicateNoFormula
-| KW_Declare Identifier alias? KW_As? TP_Predicate // Add formula/expression here!	#DeclarePredicateWithFormula
-| KW_Declare Identifier alias? KW_As? TP_Test // Add formula/expression	#DeclareTest
+declare: KW_Declare Identifier alias? KW_As? TP_Predicate				#DeclarePredicateNoFormula
+| KW_Declare Identifier alias? KW_As? TP_Predicate expressionClause		#DeclarePredicateWithFormula
+| KW_Declare Identifier alias? KW_As? TP_Test expressionClause			#DeclareTest
 ;
 
 assert: KW_Assert // Add formula/sentence here
@@ -25,7 +25,8 @@ save: KW_Save FilePath;
 
 
 // Clauses
-alias: '(' KW_Alias Identifier ')';
+aliasClause: '(' KW_Alias Identifier ')';
+expressionClause: '(' expression ')'
 
 
 /*
@@ -36,20 +37,20 @@ alias: '(' KW_Alias Identifier ')';
 Comment: '--'.* -> channel(HIDDEN);
 
 // Keywords
-KW_Declare : 'declare';
-KW_Assert : 'assert';
-KW_Generate : 'generate';
-KW_Save :  'save';
-KW_Alias : 'alias';
-KW_As : 'as';
+KW_Declare: 'declare';
+KW_Assert: 'assert';
+KW_Generate: 'generate';
+KW_Save:  'save';
+KW_Alias: 'alias';
+KW_As: 'as';
 
 // Cascade data types
-TP_Predicate : 'predicate';
-TP_Test : 'test';
+TP_Predicate: 'predicate';
+TP_Test: 'test';
 
 // General
-Identifier : [a-zA-Z_]+ [a-zA-Z_0-9]*;
-FilePath : '"'[a-zA-Z_0-9:/.\\ ]+'"';
+Identifier: [a-zA-Z_]+ [a-zA-Z_0-9]*;
+FilePath: '"'[a-zA-Z_0-9:/.\\ ]+'"';
 
 // White space
 WS

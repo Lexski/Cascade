@@ -4,23 +4,23 @@ grammar Logic;
  * Parser Rules
  */
 
-formula : unaryComparator expression
+formula: unaryComparator expression
 | expression binaryComparator expression
 ;
 
-expression : unaryOperator expression
+expression: unaryOperator expression
 | expression binaryOperator expression
 | '(' expression ')'
 | Identifier
 ;
 
-binaryOperator : OP2_And | OP2_Or | OP2_Xor;
+binaryOperator: OP2_And | OP2_Or | OP2_Xor;
 
-unaryOperator : OP1_Not;
+unaryOperator: OP1_Not;
 
-binaryComparator : CP2_Implies | CP2_Iff | CP2_Excludes;
+binaryComparator: CP2_Implies | CP2_Iff | CP2_Excludes;
 
-unaryComparator : CP1_CoversAllCases;
+unaryComparator: CP1_CoversAllCases;
 
 
 /*
@@ -28,19 +28,19 @@ unaryComparator : CP1_CoversAllCases;
  */
 
 // Operators
-OP2_And : '&';
-OP2_Or : '|';
-OP2_Xor : '^';
-OP1_Not : '!';
+OP2_And: '&';
+OP2_Or: '|';
+OP2_Xor: '^';
+OP1_Not: '!';
 
 // Comparators
-CP2_Implies : '=>';
-CP2_Iff : '<=>';
-CP2_Excludes : '$';
-CP1_CoversAllCases : '@';
+CP2_Implies: '=>';
+CP2_Iff: '<=>';
+CP2_Excludes: '$';
+CP1_CoversAllCases: '@';
 
 // Numbers and identifiers
-Identifier : [a-zA-Z_]+ [a-zA-Z_0-9]*;
+Identifier: [a-zA-Z_]+ [a-zA-Z_0-9]*;
 
 WS
 	:	[ \r\n\t] -> channel(HIDDEN)
