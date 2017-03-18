@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Cascade.Logic
 {
     // A logical formula involving predicates, operators, comparator and brackets.
-    class Formula
+    abstract class Formula
     {
+
     }
 }
