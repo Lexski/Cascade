@@ -12,7 +12,7 @@ namespace Cascade.Antlr
     // Reads Cascade code and processes it using Antlr.
     class Interpreter : IInterpreter
     {
-        public void Run(IReader reader)
+        public void Run(IReader reader, IController controller)
         {
             string cascadeInput;
             try
@@ -26,9 +26,9 @@ namespace Cascade.Antlr
                     CascadeParser parser = new CascadeParser(tokens);
                     IParseTree tree = parser.command();
 
-                    // Perform actions using a listener.
+                    // Perform actions using the listener and controller.
                     ParseTreeWalker walker = new ParseTreeWalker();
-                    CascadeListener listener = new CascadeListener();
+                    CascadeListener listener = new CascadeListener(controller);
                     walker.Walk(listener, tree);
                 }
             }

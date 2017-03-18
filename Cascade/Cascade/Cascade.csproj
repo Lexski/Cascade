@@ -57,6 +57,7 @@
     <Compile Include="Antlr\Grammars\Cascade.g4.parser.cs">
       <DependentUpon>Cascade.g4</DependentUpon>
     </Compile>
+    <Compile Include="IController.cs" />
     <Compile Include="IInterpreter.cs" />
     <Compile Include="Input\ConsoleReader.cs" />
     <Compile Include="Input\IReader.cs" />

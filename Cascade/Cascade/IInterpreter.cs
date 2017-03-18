@@ -10,6 +10,6 @@ namespace Cascade
     // Represents an object that is given text and issues commands based on it.
     interface IInterpreter
     {
-        void Run(IReader reader);
+        void Run(IReader reader, IController controller);
     }
 }

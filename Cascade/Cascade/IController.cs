@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cascade.Logic
+namespace Cascade
 {
-    class Controller : IController
+    // Represents something that implements Cascade commands.
+    interface IController
     {
     }
 }
