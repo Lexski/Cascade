@@ -15,22 +15,22 @@ namespace Cascade.Logic
 
         public void DeclarePredicate(string name)
         {
-            throw new NotImplementedException();
-        }
-
-        public void DeclarePredicate(string name, Expression expression)
-        {
-            throw new NotImplementedException();
+            Predicate.CreateAndRegister(name);
         }
 
         public void DeclarePredicate(string name, string alias)
         {
-            throw new NotImplementedException();
+            Predicate.CreateAndRegister(name, alias);
+        }
+
+        public void DeclarePredicate(string name, Expression expression)
+        {
+            Predicate.CreateAndRegister(name, expression);
         }
 
         public void DeclarePredicate(string name, string alias, Expression expression)
         {
-            throw new NotImplementedException();
+            Predicate.CreateAndRegister(name, alias, expression);
         }
 
         public void DeclareTest(string name, Expression expression)
