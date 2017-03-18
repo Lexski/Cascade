@@ -75,6 +75,8 @@
     <Compile Include="Logic\DerivedPredicate.cs" />
     <Compile Include="Logic\ElementaryPredicate.cs" />
     <Compile Include="Logic\Expression.cs" />
+    <Compile Include="Logic\Formula.cs" />
+    <Compile Include="Logic\FormulaSymbol.cs" />
     <Compile Include="Logic\Predicate.cs" />
     <Compile Include="Logic\Rule.cs" />
     <Compile Include="Logic\Test.cs" />

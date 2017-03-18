@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cascade.Logic
 {
-    class Expression
+    class Expression : Formula
     {
         public static Expression Parse(string expressionString)
         {

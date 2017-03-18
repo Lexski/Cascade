@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Cascade.Logic
 {
-    class Rule : Formula
+    // A logical formula involving predicates, operators, comparator and brackets.
+    class Formula
     {
-        public static Rule Parse(string expressionString)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
