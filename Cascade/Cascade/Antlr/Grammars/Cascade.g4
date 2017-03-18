@@ -11,13 +11,12 @@ command: declare | assert | generate | save;
 
 
 // Commands
-declare: KW_Declare Identifier aliasClause? KW_As? TP_Predicate					#DeclarePredicateNoFormula
-| KW_Declare Identifier aliasClause? KW_As? TP_Predicate expressionClause		#DeclarePredicateWithFormula
-| KW_Declare Identifier aliasClause? KW_As? TP_Test expressionClause			#DeclareTest
+declare: KW_Declare predicateName=Identifier aliasClause? KW_As? TP_Predicate				#DeclarePredicateNoFormula
+| KW_Declare predicateName=Identifier aliasClause? KW_As? TP_Predicate expressionClause		#DeclarePredicateWithFormula
+| KW_Declare testName=Identifier aliasClause? KW_As? TP_Test expressionClause				#DeclareTest
 ;
 
-assert: KW_Assert // Add formula/sentence here
-;
+assert: KW_Assert formula;
 
 generate: KW_Generate;
 
@@ -25,7 +24,7 @@ save: KW_Save FilePath;
 
 
 // Clauses
-aliasClause: '(' KW_Alias Identifier ')';
+aliasClause: '(' KW_Alias alias=Identifier ')';
 expressionClause: '(' expression ')';
 
 

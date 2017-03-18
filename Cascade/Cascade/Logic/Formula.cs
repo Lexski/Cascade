@@ -8,5 +8,9 @@ namespace Cascade.Logic
 {
     class Formula
     {
+        public static Formula Parse(string expressionString)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

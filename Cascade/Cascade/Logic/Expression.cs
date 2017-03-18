@@ -8,5 +8,9 @@ namespace Cascade.Logic
 {
     class Expression
     {
+        public static Expression Parse(string expressionString)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
