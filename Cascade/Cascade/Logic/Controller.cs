@@ -38,7 +38,7 @@ namespace Cascade.Logic
             Test.CreateAndRegister(name, alias, expression);
         }
 
-        public void Assert(Rule formula)
+        public void Assert(Rule rule)
         {
             throw new NotImplementedException();
         }

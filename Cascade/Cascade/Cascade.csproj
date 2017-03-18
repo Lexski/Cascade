@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\INamed.cs" />
+    <Compile Include="Admin\Registry.cs" />
     <Compile Include="Antlr\CascadeListener.cs" />
     <Compile Include="Antlr\Grammars\Cascade.g4.lexer.cs">
       <DependentUpon>Cascade.g4</DependentUpon>
@@ -68,6 +70,7 @@
     <Compile Include="Antlr\Grammars\Logic.g4.parser.cs">
       <DependentUpon>Logic.g4</DependentUpon>
     </Compile>
+    <Compile Include="Admin\IRegistry.cs" />
     <Compile Include="Logic\Controller.cs" />
     <Compile Include="Logic\Expression.cs" />
     <Compile Include="Logic\Predicate.cs" />
