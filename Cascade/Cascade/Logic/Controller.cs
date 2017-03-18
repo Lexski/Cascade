@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cascade.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,13 @@ namespace Cascade.Logic
 {
     class Controller : IController
     {
+        private Registry _registry;
+
+        public Controller()
+        {
+            _registry = new Registry();
+        }
+
         public void DeclarePredicate(string name)
         {
             Predicate.CreateAndRegister(name);
@@ -40,7 +48,7 @@ namespace Cascade.Logic
 
         public void Assert(Rule rule)
         {
-            throw new NotImplementedException();
+            _registry.RegisterAnonymously(rule);
         }
 
         public void Generate()
