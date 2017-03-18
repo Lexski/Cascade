@@ -43,14 +43,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cascade.g4.lexer.cs">
+      <DependentUpon>Cascade.g4</DependentUpon>
+    </Compile>
+    <Compile Include="Cascade.g4.parser.cs">
+      <DependentUpon>Cascade.g4</DependentUpon>
+    </Compile>
     <Compile Include="Input\ConsoleReader.cs" />
     <Compile Include="Input\IReader.cs" />
     <Compile Include="Interpreter.cs" />
+    <Compile Include="Logic.g4.lexer.cs">
+      <DependentUpon>Logic.g4</DependentUpon>
+    </Compile>
+    <Compile Include="Logic.g4.parser.cs">
+      <DependentUpon>Logic.g4</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Antlr4 Include="Cascade.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>Cascade</CustomToolNamespace>
+    </Antlr4>
+    <Antlr4 Include="Logic.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>Cascade</CustomToolNamespace>
+    </Antlr4>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
