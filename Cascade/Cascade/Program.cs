@@ -8,7 +8,7 @@ namespace Cascade
         static void Main(string[] args)
         {
             IReader reader = new ConsoleReader();
-            Interpreter interpreter = new Interpreter();
+            IInterpreter interpreter = new Interpreter();
 
             interpreter.Run(reader);
         }
