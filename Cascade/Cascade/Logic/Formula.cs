@@ -1,4 +1,7 @@
-﻿using Cascade.Admin;
+﻿using Antlr4.Runtime;
+using Antlr4.Runtime.Tree;
+using Cascade.Admin;
+using Cascade.Antlr;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,12 +29,25 @@ namespace Cascade.Logic
 
         protected static List<FormulaSymbol> ParseStructure(string formulaString, out List<string> predicateAliases)
         {
-            throw new NotImplementedException();
+            // Parse the formula.
+            AntlrInputStream stream = new AntlrInputStream(formulaString);
+            FormulaLexer lexer = new FormulaLexer(stream);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            FormulaParser parser = new FormulaParser(tokens);
+            IParseTree tree = parser.formula();
+
+            // Obtain the formula structure and predicate aliases.
+            ParseTreeWalker walker = new ParseTreeWalker();
+            FormulaListener listener = new FormulaListener();
+            walker.Walk(listener, tree);
+
+            predicateAliases = listener.GetPredicateAliases();
+            return listener.GetFormulaStructure();
         }
 
         protected static List<Predicate> ResolveReferences(IList<string> predicateAliases, IRegistry registry)
         {
-            throw new NotImplementedException();
+            return predicateAliases.Select(x => registry.GetObject<Predicate>(x)).ToList();
         }
 
         protected List<FormulaSymbol> _structure;
