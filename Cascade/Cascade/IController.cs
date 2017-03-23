@@ -12,17 +12,17 @@ namespace Cascade
     {
         void DeclarePredicate(string name);
 
-        void DeclarePredicate(string name, string alias);
+        void DeclarePredicateWithAlias(string name, string alias);
 
-        void DeclarePredicate(string name, Expression expression);
+        void DeclarePredicateByExpression(string name, string expressionString);
 
-        void DeclarePredicate(string name, string alias, Expression expression);
+        void DeclarePredicateWithAliasByExpression(string name, string alias, string expressionString);
 
-        void DeclareTest(string name, Expression expression);
+        void DeclareTest(string name, string expressionString);
 
-        void DeclareTest(string name, string alias, Expression expression);
+        void DeclareTestWithAlias(string name, string alias, string expressionString);
 
-        void Assert(Rule formula);
+        void Assert(string ruleString);
 
         void Generate();
 

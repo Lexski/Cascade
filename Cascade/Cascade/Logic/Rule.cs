@@ -10,9 +10,6 @@ namespace Cascade.Logic
     // A formula with exactly one comparator.
     class Rule : Formula
     {
-        private Rule(List<FormulaSymbol> structure, List<Predicate> predicates) : base(structure, predicates)
-        { }
-
         public static Rule Parse(string expressionString, IRegistry registry)
         {
             List<FormulaSymbol> structure;
@@ -29,5 +26,8 @@ namespace Cascade.Logic
 
             return new Rule(structure, predicates);
         }
+
+        private Rule(List<FormulaSymbol> structure, List<Predicate> predicates) : base(structure, predicates)
+        { }
     }
 }

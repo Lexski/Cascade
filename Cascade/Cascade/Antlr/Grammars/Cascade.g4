@@ -1,6 +1,6 @@
 grammar Cascade;
 
-import Logic;
+import Formula;
 
 /*
  * Parser Rules

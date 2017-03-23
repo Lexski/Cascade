@@ -10,9 +10,6 @@ namespace Cascade.Logic
     // A formula with no comparators.
     class Expression : Formula
     {
-        private Expression(List<FormulaSymbol> structure, List<Predicate> predicates) : base(structure, predicates)
-        { }
-
         public static Expression Parse(string expressionString, IRegistry registry)
         {
             List<FormulaSymbol> structure;
@@ -29,5 +26,8 @@ namespace Cascade.Logic
 
             return new Expression(structure, predicates);
         }
+
+        private Expression(List<FormulaSymbol> structure, List<Predicate> predicates) : base(structure, predicates)
+        { }
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="Admin\INamed.cs" />
     <Compile Include="Admin\Registry.cs" />
     <Compile Include="Antlr\CascadeListener.cs" />
+    <Compile Include="Antlr\FormulaListener.cs" />
     <Compile Include="Antlr\Grammars\Cascade.g4.lexer.cs">
       <DependentUpon>Cascade.g4</DependentUpon>
     </Compile>
@@ -65,10 +66,10 @@
     <Compile Include="Input\IReader.cs" />
     <Compile Include="Antlr\Interpreter.cs" />
     <Compile Include="Antlr\Grammars\Logic.g4.lexer.cs">
-      <DependentUpon>Logic.g4</DependentUpon>
+      <DependentUpon>Formula.g4</DependentUpon>
     </Compile>
     <Compile Include="Antlr\Grammars\Logic.g4.parser.cs">
-      <DependentUpon>Logic.g4</DependentUpon>
+      <DependentUpon>Formula.g4</DependentUpon>
     </Compile>
     <Compile Include="Admin\IRegistry.cs" />
     <Compile Include="Logic\Controller.cs" />
@@ -89,7 +90,7 @@
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>Cascade</CustomToolNamespace>
     </Antlr4>
-    <Antlr4 Include="Antlr\Grammars\Logic.g4">
+    <Antlr4 Include="Antlr\Grammars\Formula.g4">
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>Cascade</CustomToolNamespace>
     </Antlr4>

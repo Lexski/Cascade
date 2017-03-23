@@ -23,7 +23,7 @@ namespace Cascade.Antlr
             }
             else
             {
-                _controller.DeclarePredicate(context.predicateName.Text, _objectAlias);
+                _controller.DeclarePredicateWithAlias(context.predicateName.Text, _objectAlias);
             }
         }
 
@@ -31,11 +31,11 @@ namespace Cascade.Antlr
         {
             if (_objectAlias == null)
             {
-                _controller.DeclarePredicate(context.predicateName.Text, Expression.Parse(context.expressionClause().expression().GetText()));
+                _controller.DeclarePredicateByExpression(context.predicateName.Text, context.expressionClause().expression().GetText());
             }
             else
             {
-                _controller.DeclarePredicate(context.predicateName.Text, _objectAlias, Expression.Parse(context.expressionClause().expression().GetText()));
+                _controller.DeclarePredicateWithAliasByExpression(context.predicateName.Text, _objectAlias, context.expressionClause().expression().GetText());
             }
         }
 
@@ -43,17 +43,17 @@ namespace Cascade.Antlr
         {
             if (_objectAlias == null)
             {
-                _controller.DeclareTest(context.testName.Text, Expression.Parse(context.expressionClause().expression().GetText()));
+                _controller.DeclareTest(context.testName.Text, context.expressionClause().expression().GetText());
             }
             else
             {
-                _controller.DeclareTest(context.testName.Text, _objectAlias, Expression.Parse(context.expressionClause().expression().GetText()));
+                _controller.DeclareTestWithAlias(context.testName.Text, _objectAlias, context.expressionClause().expression().GetText());
             }
         }
 
         public override void ExitAssert([NotNull] CascadeParser.AssertContext context)
         {
-            _controller.Assert(Rule.Parse(context.rule().GetText()));
+            _controller.Assert(context.rule().GetText());
         }
 
         public override void ExitGenerate([NotNull] CascadeParser.GenerateContext context)

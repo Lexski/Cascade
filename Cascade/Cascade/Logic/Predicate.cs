@@ -9,11 +9,6 @@ namespace Cascade.Logic
 {
     abstract class Predicate : INamed
     {
-        public Predicate(string name)
-        {
-            Name = name;
-        }
-
         public static void CreateAndRegister(string name, IRegistry registry)
         {
             if (name == null)
@@ -96,6 +91,11 @@ namespace Cascade.Logic
                 DerivedPredicate derivedPredicate = new DerivedPredicate(name, expression);
                 registry.Register(derivedPredicate, alias);
             }
+        }
+
+        public Predicate(string name)
+        {
+            Name = name;
         }
 
         public string Name { get; }

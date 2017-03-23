@@ -21,33 +21,38 @@ namespace Cascade.Logic
             Predicate.CreateAndRegister(name, _registry);
         }
 
-        public void DeclarePredicate(string name, string alias)
+        public void DeclarePredicateWithAlias(string name, string alias)
         {
             Predicate.CreateAndRegister(name, alias, _registry);
         }
 
-        public void DeclarePredicate(string name, Expression expression)
+        public void DeclarePredicateByExpression(string name, string expressionString)
         {
+            Expression expression = Expression.Parse(expressionString, _registry);
             Predicate.CreateAndRegister(name, expression, _registry);
         }
 
-        public void DeclarePredicate(string name, string alias, Expression expression)
+        public void DeclarePredicateWithAliasByExpression(string name, string alias, string expressionString)
         {
+            Expression expression = Expression.Parse(expressionString, _registry);
             Predicate.CreateAndRegister(name, alias, expression, _registry);
         }
 
-        public void DeclareTest(string name, Expression expression)
+        public void DeclareTest(string name, string expressionString)
         {
+            Expression expression = Expression.Parse(expressionString, _registry);
             Test.CreateAndRegister(name, expression, _registry);
         }
 
-        public void DeclareTest(string name, string alias, Expression expression)
+        public void DeclareTestWithAlias(string name, string alias, string expressionString)
         {
+            Expression expression = Expression.Parse(expressionString, _registry);
             Test.CreateAndRegister(name, alias, expression, _registry);
         }
 
-        public void Assert(Rule rule)
+        public void Assert(string ruleString)
         {
+            Rule rule = Rule.Parse(ruleString, _registry);
             _registry.RegisterAnonymously(rule);
         }
 

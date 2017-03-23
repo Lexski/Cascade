@@ -1,8 +1,10 @@
-grammar Logic;
+grammar Formula;
 
 /*
  * Parser Rules
  */
+
+ formula: rule | expression;
 
 rule: unaryComparator expression
 | expression binaryComparator expression

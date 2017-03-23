@@ -24,15 +24,6 @@ namespace Cascade.Logic
             }
         }
 
-        protected List<FormulaSymbol> _structure;
-        protected List<Predicate> _predicates;
-
-        protected Formula(List<FormulaSymbol> structure, List<Predicate> predicates)
-        {
-            _structure = structure;
-            _predicates = predicates;
-        }
-
         protected static List<FormulaSymbol> ParseStructure(string formulaString, out List<string> predicateAliases)
         {
             throw new NotImplementedException();
@@ -42,7 +33,14 @@ namespace Cascade.Logic
         {
             throw new NotImplementedException();
         }
+
+        protected List<FormulaSymbol> _structure;
+        protected List<Predicate> _predicates;
+
+        protected Formula(List<FormulaSymbol> structure, List<Predicate> predicates)
+        {
+            _structure = structure;
+            _predicates = predicates;
+        }
     }
 }
-
-// ToDo: Make sure all static methods and variables are in a sensible place within code files.
